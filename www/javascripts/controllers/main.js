@@ -9,6 +9,14 @@ app.controller('MainCtrl', [
 
     $scope.wallName = $routeParams.wallName; // required
 
+    // Set navbar
+    var backButton = new steroids.buttons.NavigationBarButton();
+    backButton.title = 'Back';
+    steroids.view.navigationBar.update({
+      title: $scope.wallName,
+      backButton: backButton,
+    });
+
     $scope.wallId = $routeParams.wallId; // mandatory
     if (!$scope.wallId) {
       // If we do not have wallId, fetch it
