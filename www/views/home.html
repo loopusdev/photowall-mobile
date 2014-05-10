@@ -1,6 +1,6 @@
 <div>
-	<form name="wallNameForm" novalidate>
-		<input type="text" name="wallName" ng-model="wallName" placeholder="Wall name" required ng-pattern="/^[a-z-]*$/"></input> </br>
+	<form name="wallNameForm" novalidate ng-submit="goToMain()">
+		<input type="text" name="wallName" ng-model="wallName" placeholder="Wall name" required ng-pattern="/^[a-zA-Z0-9-]*$/"></input> </br>
 	</form>
 	<span ng-show="wallNameForm.wallName.$error.pattern"> Wall name can contain only small letters and - </span>
 	<button ng-click="goToMain()"> Start Walling </button>

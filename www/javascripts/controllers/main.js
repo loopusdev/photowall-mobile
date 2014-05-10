@@ -14,9 +14,7 @@ app.controller('MainCtrl', [
       // If we do not have wallId, fetch it
       rest.getWall($scope.wallName, 
         function(data) {
-          //$scope.$apply(function() {
-            $scope.wallId = data.data.id;
-          //});
+          $scope.wallId = data.data.id;
         }, function(error) {
           alert('Error occured');
         });
