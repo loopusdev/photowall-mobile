@@ -35,12 +35,16 @@ app.controller('MainCtrl', [
 		$scope.takePhoto = function() {
       navigator.camera.getPicture(
         function(imageData) { // On success
+          var base64URI = 'data:image/jpeg;base64,' + imageData;
           $scope.$apply(function() {
             // Display photo
-            $scope.newPhotoSrc = 'data:image/jpeg;base64,' + imageData;
+            $scope.newPhotoSrc = base64URI;
           });
           // Send photo to server
-          // TODO: implement
+          rest.uploadPhoto(base64URI, function(data) {
+            // Post photo to wall
+            rest.postPhoto($scope.wallId, data.data.url);
+          });
         }, function(message) { // On failure
           alert('Failed because: ' + message);
         }, { 
