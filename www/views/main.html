@@ -1,4 +1,12 @@
 <div>
-	<img src="{{newPhotoSrc}}" width="300" height="300" ng-show="newPhotoSrc"></img>
-	<button ng-click="takePhoto()"> Take photo </button> <br>
+	<div class="img-container">
+    <img src="{{newPhotoSrc}}" ng-show="newPhotoSrc"></img>
+  </div>
+
+	<div class="object photo">
+  <div class="msg">
+    <p>You photo has been sent to wall</p>
+  </div>
+    <button class="btn"ng-click="takePhoto()">Take new photo</button>
+  </div>
 </div>
