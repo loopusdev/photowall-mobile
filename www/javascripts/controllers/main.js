@@ -32,7 +32,7 @@ app.controller('MainCtrl', [
       $location.url('/');
     };
 
-		$scope.takePhoto = function(imgId) {
+		$scope.takePhoto = function() {
       navigator.camera.getPicture(
         function(imageData) { // On success
           $scope.$apply(function() {
