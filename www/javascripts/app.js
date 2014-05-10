@@ -10,7 +10,7 @@ app.config(function ($routeProvider) {
       templateUrl: 'views/home.html',
       controller: 'HomeCtrl'
     })
-    .when('/main', {
+    .when('/main/:wallName/', {
       templateUrl: 'views/main.html',
       controller: 'MainCtrl'
     })

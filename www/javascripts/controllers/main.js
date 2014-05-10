@@ -3,9 +3,24 @@ var app = angular.module('PhotoWall');
 app.controller('MainCtrl', [
   '$scope',
   '$location',
-	function($scope, $location) {
+  '$routeParams',
+  'services.rest',
+	function($scope, $location, $routeParams, rest) {
 
-    $scope.msg = 'No photo taken yet';
+    $scope.wallName = $routeParams.wallName; // required
+
+    $scope.wallId = $routeParams.wallId; // mandatory
+    if (!$scope.wallId) {
+      // If we do not have wallId, fetch it
+      rest.getWall($scope.wallName, 
+        function(data) {
+          //$scope.$apply(function() {
+            $scope.wallId = data.data.id;
+          //});
+        }, function(error) {
+          alert('Error occured');
+        });
+    }
 
     $scope.goToHome = function() {
       $location.url('/');
