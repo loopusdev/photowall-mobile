@@ -1,4 +1,4 @@
-var app = angular.module('MyApp', [
+var app = angular.module('PhotoWall', [
   'ngResource',
   'ngRoute',
   'ngTouch',
@@ -7,6 +7,10 @@ var app = angular.module('MyApp', [
 app.config(function ($routeProvider) {
   $routeProvider
     .when('/', {
+      templateUrl: 'views/home.html',
+      controller: 'HomeCtrl'
+    })
+    .when('/main', {
       templateUrl: 'views/main.html',
       controller: 'MainCtrl'
     })

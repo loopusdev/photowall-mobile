@@ -1,3 +1,6 @@
-<div ng-controller="MainCtrl">
+<div>
+	<img src="{{newPhotoSrc}}" width="300" height="300"></img>
+	<button ng-click="goToHome()"> Back </button>
+	<button ng-click="takePhoto('myImage')"> Take photo </button> <br>
 	{{msg}}
 </div>

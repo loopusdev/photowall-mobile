@@ -1,7 +1,7 @@
 # For an explanation of the steroids.config properties, see the guide at
 # http://guides.appgyver.com/steroids/guides/project_configuration/config-application-coffee/
 
-steroids.config.name = "My app"
+steroids.config.name = "PhotoWall"
 
 # -- Initial Location --
 steroids.config.location = "http://localhost/index.html"
