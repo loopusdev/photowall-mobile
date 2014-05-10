@@ -1,0 +1,1 @@
+document.getElementById('ag-cordova-loader').src = 'http://localhost/cordova.js';

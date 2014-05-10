@@ -1,0 +1,20 @@
+{
+  "name": "phonewall",
+  "version": "0.0.1",
+  "authors": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "www/components",
+    "www/spec",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "steroids-js": "3.1.x",
+    "angular": "1.2.16",
+    "angular-touch": "1.2.16",
+    "angular-resource": "1.2.16",
+    "angular-route": "1.2.16"
+  }
+}

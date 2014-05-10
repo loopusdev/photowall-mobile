@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <meta name="viewport" content="width=device-width">
+    <title>My App Title</title>
+
+    <link rel="stylesheet" href="/vendor/ionic/css/ionic.css" />
+    <link rel="stylesheet" href="/stylesheets/app.css" />
+
+    <script src="/javascripts/onerror.js"></script>
+    <script src="/javascripts/console.log.js"></script>
+
+    <!-- cordova.js is served from localhost to ensure the correct version -->
+    <!-- Because of bug on android where loading cordova fails, cordova loader workaround is used -->
+    <script id="ag-cordova-loader"></script>
+    <script src="/javascripts/cordova-loader.js"></script>
+
+    <script src="/components/steroids-js/steroids.js"></script>
+
+    <script src="/components/angular/angular.js"></script>
+    <script src="/components/angular-resource/angular-resource.js"></script>
+    <script src="/components/angular-route/angular-route.js"></script>
+    <script src="/components/angular-touch/angular-touch.js"></script>
+
+    <script src="/javascripts/app.js"></script>
+    <script src="/javascripts/controllers/main.js"></script>
+  </head>
+
+  <body class="content" ng-app="MyApp">
+
+    <div ng-view=""></div>
+
+  </body>
+</html>
