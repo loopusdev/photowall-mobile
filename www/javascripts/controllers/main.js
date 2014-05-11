@@ -51,8 +51,8 @@ app.controller('MainCtrl', [
             // Post photo to wall
             rest.postPhoto($scope.wallId, data.data.url);
           });
-        }, function(message) { // On failure
-          alert('Failed because: ' + message);
+        }, function(message) {
+          // On failure
         }, { 
           quality: 50,
           targetWidth: 300,
