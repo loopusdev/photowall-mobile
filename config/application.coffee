@@ -29,7 +29,7 @@ steroids.config.location = "http://localhost/index.html"
 # steroids.config.tabBar.backgroundImage = ""
 
 # -- Navigation Bar --
-steroids.config.navigationBar.tintColor = "#ff993f"
+steroids.config.navigationBar.tintColor = "#f88622"
 steroids.config.navigationBar.titleColor = "#ffffff"
 steroids.config.navigationBar.buttonTintColor = "#ffffff"
 
