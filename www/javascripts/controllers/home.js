@@ -3,19 +3,26 @@ angular.module('PhotoWall')
     '$scope',
     '$location',
     'services.rest',
-    function($scope, $location, rest) {
+    '$window',
+    'services.recentWalls',
+    function($scope, $location, rest, $window, recentWalls) {
 
-      $scope.goToMain = function() {
-        if ($scope.wallName != undefined) {
+      $scope.recentWalls = recentWalls.getWalls();
+
+      $scope.goToMain = function(wallName) {
+        wallName = wallName || $scope.wallName;
+        if (wallName != undefined) {
           // Check if wall name is valid
-          rest.getWall($scope.wallName, 
+          rest.getWall(wallName, 
             function(data) {
-              var url = '/main/' + $scope.wallName + '?wallId=' + data.data.id;
+              var url = '/main/' + wallName + '?wallId=' + data.data.id;
               //$location.url(url);
               steroids.layers.push(new steroids.views.WebView('/index.html#' + url));
+              // Update list of recent walls
+              recentWalls.addWall(wallName);
             }, function(error) {
               if (error.status == false) {
-                alert('There is no wall with name ' + $scope.wallName);
+                alert('There is no wall with name ' + wallName);
               } else {
                 alert('Error occured');
               }
