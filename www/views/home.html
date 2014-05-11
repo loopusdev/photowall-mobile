@@ -9,7 +9,7 @@
 	</form>
 	<span ng-show="wallNameForm.wallName.$error.pattern"> Wall name can contain only small letters and - </span>
 
-  <div class="messages">
+  <div class="messages" ng-hide="recentWalls.length > 0">
     <div class="info">
       <img src="../images/info.png" alt=""><span>If you don’t know you wall <br>name, ask you host.</span>
     </div>
@@ -22,7 +22,7 @@
     <button class="btn" ng-click="goToMain()">Start posting</button>
   </div>
 
-  <div class="recent">
+  <div class="recent" ng-show="recentWalls.length > 0">
     <h2>Recently opened walls</h2>
     <p ng-repeat="recentWall in recentWalls" ng-click="goToMain(recentWall)">#{{recentWall}}</p>
   </div>

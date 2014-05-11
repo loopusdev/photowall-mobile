@@ -16,7 +16,7 @@ app.controller('MainCtrl', [
     var backButton = new steroids.buttons.NavigationBarButton();
     backButton.title = 'Back';
     steroids.view.navigationBar.update({
-      title: $scope.wallName,
+      title: '#' + $scope.wallName,
       backButton: backButton,
     });
 
