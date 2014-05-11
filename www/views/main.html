@@ -4,8 +4,8 @@
   </div>
 
 	<div class="object photo">
-  <div class="msg">
-    <p>You photo has been sent to wall</p>
+  <div class="msg" ng-class="{'show-photo-sent': showPhotoSentMessage}">
+    <p >Your photo has been sent to wall</p>
   </div>
     <button class="btn" ng-click="takePhoto()">Take new photo</button>
   </div>

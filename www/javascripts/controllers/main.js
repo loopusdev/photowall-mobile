@@ -5,9 +5,12 @@ app.controller('MainCtrl', [
   '$location',
   '$routeParams',
   'services.rest',
-	function($scope, $location, $routeParams, rest) {
+  '$timeout',
+	function($scope, $location, $routeParams, rest, $timeout) {
 
     $scope.wallName = $routeParams.wallName; // required
+
+    $scope.showPhotoSentMessage = false;
 
     // Set navbar
     var backButton = new steroids.buttons.NavigationBarButton();
@@ -39,6 +42,9 @@ app.controller('MainCtrl', [
           $scope.$apply(function() {
             // Display photo
             $scope.newPhotoSrc = base64URI;
+            // Show message and remove it after 3 secs
+            $scope.showPhotoSentMessage = true;
+            $timeout(function() { $scope.showPhotoSentMessage = false; }, 3000);
           });
           // Send photo to server
           rest.uploadPhoto(base64URI, function(data) {
