@@ -112,10 +112,14 @@ body {
 }*/
 
 .object {
-  padding: 23px 15px 15px;
+  padding: 15px 15px 15px;
   width: 100%;
+  position: relative;
 }
 
+.start {
+  padding: 0px 15px 15px !important;
+}
 
 .tag-input {
   background-color: #fff;
@@ -127,10 +131,13 @@ body {
 
   font-family: 'Signika', sans-serif;
   font-weight: 400;
+  padding-left: 30px;
 
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
   box-shadow: none !important;
+  outline:none;
+  background-image: none;
 
 }
 
@@ -184,7 +191,13 @@ body {
   margin: 0 auto;
   margin-bottom: 25px;
   width: 88%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
 
+.show-photo-sent{
+  opacity: 1;
+  transition: opacity 0.5s ease .5s;
 }
 
 .msg p {
@@ -194,8 +207,65 @@ body {
   padding: 8px;
 }
 
-.show-photo-sent {
-  background-color: #FFAAEE;
+.recent {
+  padding: 0px 15px;
+  font-family: 'Signika', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.recent h2 {
+  font-weight: 25px;
+  color: #555;
+  font-weight: 300;
+}
+
+.recent p {
+margin-top: 15px;
+color: #ff993f;
+}
+.hash {
+  font-family: 'Signika', sans-serif;
+  font-size: 25px;
+  color: #ff993f;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.wall-name {
+  position: relative;
+}
+
+.messages {
+  padding: 0px 15px 15px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #999;
+}
+
+
+.messages span{
+  font-size: 15px;
+  font-weight: 400;
+  font-family: 'Signika', sans-serif;
+}
+
+
+
+.messages img{
+  width: 30px;
+  height: auto;
+  float: left;
+  margin-right: 15px;
+}
+
+.info {
+  margin-bottom: 10px;
+}
+
+.pin a {
+  color: #ff993f;
 }
 
 

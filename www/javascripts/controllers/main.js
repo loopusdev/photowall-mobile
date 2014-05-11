@@ -49,7 +49,11 @@ app.controller('MainCtrl', [
           // Send photo to server
           rest.uploadPhoto(base64URI, function(data) {
             // Post photo to wall
-            rest.postPhoto($scope.wallId, data.data.url);
+            rest.postPhoto($scope.wallId, data.data.url, function() {
+              // Show message and remove it after 3 secs
+              $scope.showPhotoSentMessage = true;
+              $timeout(function() { $scope.showPhotoSentMessage = false; }, 3000);              
+            });
           });
         }, function(message) {
           // On failure

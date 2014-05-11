@@ -1,12 +1,33 @@
 <div>
 	<form name="wallNameForm" novalidate ng-submit="goToMain()">
-		<div class="object">
-			<input class="tag-input" type="text" name="wallName" ng-model="wallName" placeholder="Wall name" required ng-pattern="/^[a-zA-Z0-9-]*$/"></input>
+		<div class="object">			
+      <div class="wall-name">
+      <span class="hash">#</span>
+        <input class="tag-input" type="text" name="wallName" ng-model="wallName" placeholder="Wall name" required ng-pattern="/^[a-zA-Z0-9-]*$/"></input>
+      </div>
 		</div>
 	</form>
 	<span ng-show="wallNameForm.wallName.$error.pattern"> Wall name can contain only small letters and - </span>
-	<div class="object">
-		<button class="btn" ng-click="goToMain()">Start posting</button>
-	</div>
-	<div ng-repeat="recentWall in recentWalls" ng-click="goToMain(recentWall)">{{recentWall}}</div>
+
+  <div class="messages">
+    <div class="info">
+      <img src="../images/info.png" alt=""><span>If you don’t know you wall <br>name, ask you host.</span>
+    </div>
+    <div class="pin">
+      <img src="../images/pin.png" alt=""><span>If you are host you can <br>create wall <a href="">here</a>.</span>
+    </div>
+  </div>
+
+  <div class="start">
+    <button class="btn" ng-click="goToMain()">Start posting</button>
+  </div>
+
+  <div class="recent">
+    <h2>Recently opened walls</h2>
+    <p ng-repeat="recentWall in recentWalls" ng-click="goToMain(recentWall)">#{{recentWall}}</p>
+  </div>
+
+
+
+
 </div>

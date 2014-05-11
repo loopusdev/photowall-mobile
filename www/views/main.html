@@ -1,12 +1,13 @@
 <div>
 	<div class="img-container">
-    <img src="{{newPhotoSrc || 'http://img.ehowcdn.com/other-people/ehow/images/a05/r2/7h/effect-sample-sizes-data-evaluation_-800x800.jpg'}}"></img>
+    <img src="{{newPhotoSrc || '/images/photo.png'}}"></img>
   </div>
 
 	<div class="object photo">
-  <div class="msg" ng-class="{'show-photo-sent': showPhotoSentMessage}">
+    <div class="msg" ng-class="{'show-photo-sent': showPhotoSentMessage}">
     <p >Your photo has been sent to wall</p>
-  </div>
+    </div>
+  <div>
     <button class="btn" ng-click="takePhoto()">Take new photo</button>
   </div>
 </div>
